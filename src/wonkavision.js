@@ -32,7 +32,7 @@ yargs
 
       const folderDelete = ora('removing files').start();
       if (!argv.dryRun) {
-        const deletedPaths = await del(argv.artifacts);
+        const deletedPaths = await del(argv.artifacts, {force: true});
 
         folderDelete.succeed(`removed ${chalk.red(deletedPaths.length)} items`);
       } else {
