@@ -86,7 +86,7 @@ yargs
       const zippingFiles = ora(`adding files to ${zipFilePath}`).start();
 
       const zipFile = new yazl.ZipFile();
-      const paths = await globby([`${path.join(argv.src, '**', '*.*')}`]);
+      const paths = await globby(`${path.posix.join(argv.src, '**', '*')}`);
 
       zippingFiles.text = `adding ${chalk.cyan(paths.length)} items to ${chalk.magenta(argv.name)}`;
 
