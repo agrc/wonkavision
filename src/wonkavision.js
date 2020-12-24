@@ -13,7 +13,7 @@ const yargs = require('yargs');
 
 yargs
   .command(
-    'clean [artifacts]',
+    'clean [artifacts..]',
     'clean build artifacts',
     yargs => {
       yargs.positional('artifacts', {
