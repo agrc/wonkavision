@@ -126,14 +126,20 @@ yargs
           type: 'string',
           alias: 'n',
           default: 'deploy.zip'
+        })
+        .option('extra-command', {
+          describe: 'extra command to send to the unzip',
+          type: 'string'
         });
     },
     async argv => {
       console.log(`${chalk.yellow('decompressing')}`);
 
       dotenv.config();
-
-      const command = `cd ${argv.dest}; unzip -oq ${argv.name}; rm ${argv.name}`;
+      let command = `cd ${argv.dest}; unzip -oq ${argv.name}; rm ${argv.name}`;
+      if (argv.extraCommand) {
+        command += ';' + argv.extraCommand;
+      }
       const connection = createConnection();
       if (!connection) {
         return;
