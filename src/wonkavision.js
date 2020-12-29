@@ -94,7 +94,10 @@ yargs
       if (!argv.dryRun) {
         paths.forEach(filePath => {
           let parent = filePath.slice(baseDir.length + 1);
-          zipFile.addFile(filePath, parent);
+          zipFile.addFile(filePath, parent, {
+            mtime: new Date(),
+            mode: 040755,
+          });
         });
 
         zipFile.outputStream
