@@ -199,7 +199,7 @@ yargs
           default: path.join('.', 'deploy', 'deploy.zip')
         })
         .positional('dest', {
-          describe: 'the folder to place the src',
+          describe: 'the folder to place the zip file',
           type: 'string',
           alias: 'd',
           default: 'app'
