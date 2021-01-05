@@ -32,7 +32,7 @@ yargs
 
       const folderDelete = ora('removing files').start();
       if (!argv.dryRun) {
-        const deletedPaths = await del(argv.artifacts, {force: true});
+        const deletedPaths = await del(argv.artifacts, { force: true });
 
         folderDelete.succeed(`removed ${chalk.red(deletedPaths.length)} items`);
       } else {
@@ -96,7 +96,7 @@ yargs
           let parent = filePath.slice(baseDir.length + 1);
           zipFile.addFile(filePath, parent, {
             mtime: new Date(),
-            mode: 040755,
+            mode: 0o40755
           });
         });
 
