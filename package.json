@@ -1,6 +1,6 @@
 {
   "name": "@agrc/wonkavision",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "![TopHat](https://user-images.githubusercontent.com/325813/91506198-c8cb7b00-e88e-11ea-9215-bad08585248a.png)",
   "main": "wonkavision.js",
   "dependencies": {
@@ -41,5 +41,9 @@
   "bugs": {
     "url": "https://github.com/agrc/wonkavision/issues"
   },
-  "homepage": "https://github.com/agrc/wonkavision#readme"
+  "homepage": "https://github.com/agrc/wonkavision#readme",
+  "keywords": [
+    "cli",
+    "deployment"
+  ]
 }
